@@ -13,7 +13,6 @@
 
 <script>
 	export default {
-
 		props: ['stock'],
 
 		data: function () {
@@ -96,8 +95,8 @@
 </script>
 
 <style scoped>
-  h2 {
-    font-size: 40px;
-    color: mediumseagreen;
-  }
+	h2 {
+    	font-size: 40px;
+    	color: mediumseagreen;
+	}
 </style>
