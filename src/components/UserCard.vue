@@ -63,7 +63,7 @@
 						</div>
 					</div>
 				</div>
-			</div>d
+			</div>
 		</section>
 
 		<section class="mb-6">
