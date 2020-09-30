@@ -12,7 +12,7 @@
 							</div>
 							<div class="ml-5">
 								<h1 class="title has-text-white">
-									Hey Sam
+									Evenin'
 								</h1>
 								<h2 class="subtitle has-text-grey-light">
 									Your Investment Tracking Dashboard
