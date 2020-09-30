@@ -1,22 +1,29 @@
 <template>
 	<div class="user-card">
-
 		<section class="hero">
 			<div class="hero-body">
 				<div class="container">
 					<div class="wrap">
-						<div>
-							<figure class="image is-48x48">
-								<img class="is-rounded" src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/69248997_10156619677567358_3333642461401579520_n.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=YlA4eUt89iIAX-qvCS7&_nc_oc=AQlJcnQbI770v9jwXAc8b1QyFyrVOnfjMpBnAC8kJnkIegbzxEcHZYYkdUjqoYZV2Y88NQQnvGV27lTevfHeUSzd&_nc_ht=scontent-lht6-1.xx&oh=f0d36e166cb9a16e8a11cc184b296ac7&oe=5F9585E5">
-							</figure>
+						<div class="wrap">
+							<div>
+								<figure class="image is-48x48">
+									<img class="is-rounded" src="https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/69248997_10156619677567358_3333642461401579520_n.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=YlA4eUt89iIAX-qvCS7&_nc_oc=AQlJcnQbI770v9jwXAc8b1QyFyrVOnfjMpBnAC8kJnkIegbzxEcHZYYkdUjqoYZV2Y88NQQnvGV27lTevfHeUSzd&_nc_ht=scontent-lht6-1.xx&oh=f0d36e166cb9a16e8a11cc184b296ac7&oe=5F9585E5">
+								</figure>
+							</div>
+							<div class="ml-5">
+								<h1 class="title has-text-white">
+									Hey Sam
+								</h1>
+								<h2 class="subtitle has-text-grey-light">
+									Your Investment Tracking Dashboard
+								</h2>
+							</div>
 						</div>
-						<div class="ml-5">
-							<h1 class="title has-text-white">
-								Hey Sam
-							</h1>
-							<h2 class="subtitle has-text-grey-light">
-								Your Investment Tracking Dashboard
-							</h2>
+						<div class="is-one-fifth notification is-primary is-light">
+							<button class="delete"></button>
+							<strong>Welcome to the Dashboard!</strong>
+							Check the value and performance of your stock by adding the stock symbol, and by adding the other required information. Your stock will then show on the graph.
+							If you don't know your stock symbol, or it's not found, input the other information to check out the performance of a stock, including adding the <strong>Current stock price</strong>, manually.
 						</div>
 					</div>
 				</div>
@@ -88,13 +95,13 @@
 							</div>
 						</div>
 					</div>
-					
+
 				</div>
-				
+
 			</div>
 		</section>
 
-	<!--
+		<!--
 	new price - old price = {{difference}}<br>
 	
 	(difference) % (oldprice) = {{second}} <br>
@@ -109,7 +116,7 @@
 </template>
 
 <script>
-import ChartItem from './ChartItem';
+	import ChartItem from './ChartItem';
 
 	export default {
 
@@ -126,9 +133,9 @@ import ChartItem from './ChartItem';
 			}
 		},
 
-		 methods: {
+		methods: {
 			ChartItemOnInput() {
-				this.$refs.stockChart.onInput(event);
+				this.$refs.stockChart.onInput( event );
 			},
 		},
 
@@ -175,5 +182,11 @@ import ChartItem from './ChartItem';
 
 	.wrap {
 		display: flex;
+	}
+
+	.notification {
+		margin-left: auto;
+		order: 2;
+		width: 65%;
 	}
 </style>

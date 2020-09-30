@@ -4,7 +4,7 @@
 			<div class="card">
 				<div class="card-content">
 					<canvas v-if="this.stock != '' " id="bar-chart2" width="200" height="150"></canvas>
-					<p v-if="this.stock == '' " class="title is-6 has-text-grey-light">Enter a stock symbol to view the chart</p>
+					<mock-chart v-if="this.stock == '' "></mock-chart>
 				</div>
 			</div>
 		</div>
@@ -12,8 +12,14 @@
 </template>
 
 <script>
+	import MockChart from './MockChart';
+
 	export default {
-		props: ['stock'],
+		components: {
+			'mock-chart': MockChart,
+		},
+
+		props: [ 'stock' ],
 
 		data: function () {
 			return {
@@ -21,8 +27,8 @@
 			}
 		},
 
-		 methods: {
-			onInput(event){
+		methods: {
+			onInput( event ) {
 				this.textInput = event.target.value;
 				var param = event.target.value;
 				var url = 'http://api.marketstack.com/v1/eod?access_key=bca428891880307ff55dab467675b520&limit=30&symbols=';
@@ -40,17 +46,17 @@
 
 						const all = data;
 						const item_name = data[ 'data' ];
-					
+
 						var stackValues = [];
 						var stackDates = [];
 						for ( var key in item_name ) {
 							// console.log( key );
 							console.log( item_name[ key ][ 'open' ] );
 							stackValues.push( item_name[ key ][ 'open' ] );
-							stackDates.push( item_name[ key ][ 'date' ].substring(0, 10) );
+							stackDates.push( item_name[ key ][ 'date' ].substring( 0, 10 ) );
 						}
 
-						console.log(stackValues);
+						console.log( stackValues );
 
 						new Chart( document.getElementById( "bar-chart2" ), {
 							type: 'line',
@@ -63,23 +69,21 @@
 								} ]
 							},
 
-							options: { 
-								
+							options: {
+
 								scales: {
-									yAxes: [{
+									yAxes: [ {
 										ticks: {
 											fontColor: "#b5b5b5",
 										}
-									}],
-									xAxes: [{
+									} ],
+									xAxes: [ {
 										ticks: {
 											fontColor: "#b5b5b5",
 										}
-									}]
+									} ]
 								}
 							}
-							
-
 						} );
 
 
@@ -90,13 +94,12 @@
 				request.send()
 			},
 		},
-	}	
-	
+	}
 </script>
 
 <style scoped>
 	h2 {
-    	font-size: 40px;
-    	color: mediumseagreen;
+		font-size: 40px;
+		color: mediumseagreen;
 	}
 </style>
