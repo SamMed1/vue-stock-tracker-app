@@ -3,7 +3,7 @@
 		<template slot="brand">
 			<b-navbar-item>
 				<div class="logo">
-					stox<span>.com</span>
+					stox
 				</div>
 			</b-navbar-item>
 		</template>
@@ -35,7 +35,7 @@
 	}
 
 	.logo {
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 		color: #fff;
 	}
 
@@ -46,7 +46,7 @@
 	@media screen and (min-width: 1024px) {
 		.navbar {
 			min-height: 3.25rem;
-			padding: 0rem 3rem;
+			padding: 0rem 4%;
 		}
 	}
 </style>

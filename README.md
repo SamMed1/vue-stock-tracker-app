@@ -1,4 +1,4 @@
-stox.com
+stox
 === 
 
 ## Shut up and tell me what it does!
