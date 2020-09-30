@@ -1,4 +1,4 @@
-stox.com
+stox.com (Still in production)
 === 
 
 Stock checker app using the [Marketstack](https://marketstack.com/) API, using [Vue.js](https://vuejs.org/).
