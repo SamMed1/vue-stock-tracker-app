@@ -1,5 +1,5 @@
 <template>
-	<div class="user-card">
+	<div class="user-card pt-0">
 		<section class="hero">
 			<div class="hero-body">
 				<div class="container">
@@ -12,7 +12,7 @@
 							</div>
 							<div class="ml-5">
 								<h1 class="title has-text-white">
-									Evenin'
+									Good Evenin'
 								</h1>
 								<h2 class="subtitle has-text-grey-light">
 									Your Investment Tracking Dashboard
