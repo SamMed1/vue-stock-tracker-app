@@ -27,6 +27,18 @@
 </script>
 
 <style>
+	:root {
+		--app-background-color: #363744;
+	}
+
+	[theme="dark"] {
+		--app-background-color: #7589d6;
+	}
+
+	.app-background {
+		background-color: var(--app-background-color);
+	}
+
 	#app {
 		font-family: 'Quicksand', sans-serif;
 		color: #2c3e50;

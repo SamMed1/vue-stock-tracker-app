@@ -21,7 +21,38 @@
 			return {
 				lightMode: false
 			}
-    	}
+		},
+		mounted() {
+			let bodyElement = document.body;
+			bodyElement.classList.add( "app-background" );
+
+			// check for active theme
+			let htmlElement = document.documentElement;
+			let theme = localStorage.getItem( "theme" );
+
+			if ( theme === 'dark' ) {
+				htmlElement.setAttribute( 'theme', 'dark' )
+				this.lightMode = true
+			} else {
+				htmlElement.setAttribute( 'theme', 'light' );
+				this.lightMode = false
+			}
+		},
+		watch: {
+			lightMode: function () {
+				// add/remove class to/from html tag
+				let htmlElement = document.documentElement;
+
+				if ( this.lightMode ) {
+					localStorage.setItem( "theme", 'dark' );
+					htmlElement.setAttribute( 'theme', 'dark' );
+				} else {
+					localStorage.setItem( "theme", 'light' );
+					htmlElement.setAttribute( 'theme', 'light' );
+				}
+			}
+		}
+
 	}
 </script>
 
