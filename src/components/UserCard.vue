@@ -1,5 +1,5 @@
 <template>
-	<div class="user-card">
+	<div class="user-card pt-0">
 		<section class="hero">
 			<div class="hero-body">
 				<div class="container">
@@ -12,7 +12,7 @@
 							</div>
 							<div class="ml-5">
 								<h1 class="title has-text-white">
-									Evenin'
+									<span id="greeting"></span>
 								</h1>
 								<h2 class="subtitle has-text-grey-light">
 									Your Investment Tracking Dashboard
@@ -94,10 +94,38 @@
 								</div>
 							</div>
 						</div>
+
+						<div class="card card-invisible">
+							<div class="card-content">
+								<div class="content">
+									<p class="title is-5 has-text-white mb-0 mt-5">News</p>
+									<figure class="image is-48x48">
+										<a href="https://www.ft.com/" target="_blank">
+											<img class="is-rounded" src="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=update-logos&format=svg">
+										</a>
+									</figure>
+									<figure class="image is-48x48">
+										<a href="https://www.telegraph.co.uk/business/" target="_blank">
+											<img class="is-rounded" src="https://www.telegraph.co.uk/etc/designs/telegraph/core/clientlibs/core/icons/mstile-144x144.png">
+										</a>
+									</figure>
+									<figure class="image is-48x48">
+										<a href="https://www.bloomberg.com/europe" target="_blank">
+											<img class="is-rounded" src="https://assets.bwbx.io/s3/javelin/public/hub/images/apple-touch-icon-57x57-b572ef8093.png">
+										</a>
+									</figure>
+									<figure class="image is-48x48">
+										<a href="https://www.hl.co.uk/news" target="_blank">
+											<img class="is-rounded" src="https://www.hl.co.uk/__data/assets/image/0011/6917159/hl-circle.png">
+										</a>
+									</figure>
+								</div>
+							</div>
+						</div>
+
+
 					</div>
-
 				</div>
-
 			</div>
 		</section>
 
@@ -153,7 +181,6 @@
 			},
 
 
-
 			costCalc() {
 				return this.cost / 100
 			},
@@ -166,7 +193,21 @@
 				return this.cost + this.costCalcSecond
 			}
 
-		}
+		},
+
+		mounted() {
+			let d = new Date();
+			let h = d.getHours();
+			let greeting = document.getElementById( 'greeting' );
+
+			if ( h < 12 ) {
+				greeting.innerHTML = 'Good Morning';
+			} else if ( h > 12 && h < 18 ) {
+				greeting.innerHTML = 'Good Afternoon';
+			} else {
+				greeting.innerHTML = 'Good Evening';
+			}
+		},
 
 	}
 </script>
@@ -188,5 +229,25 @@
 		margin-left: auto;
 		order: 2;
 		width: 65%;
+	}
+
+	.card-invisible {
+		background: none;
+		border: navajowhite;
+		box-shadow: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.card-invisible .card-content {
+		padding: 0rem 0.5rem;
+	}
+
+	.card-invisible .card-content .content figure {
+		text-align: center;
+		margin-right: 1.25rem;
+		margin-left: 0;
+		margin-top: 1.25rem;
+		display: inline-block;
 	}
 </style>

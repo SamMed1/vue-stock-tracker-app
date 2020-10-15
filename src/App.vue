@@ -1,6 +1,7 @@
 <template>
 	<div id="app">
 		<HeaderItem />
+		<ModeSwitch />
 		<UserCard />
 		<FooterItem />
 	</div>
@@ -8,6 +9,7 @@
 
 <script>
 	import HeaderItem from './components/HeaderItem.vue'
+	import ModeSwitch from './components/ModeSwitch.vue'
 	import UserCard from './components/UserCard.vue'
 	import ChartItem from './components/ChartItem.vue'
 	import FooterItem from './components/FooterItem.vue'
@@ -16,6 +18,7 @@
 		name: 'app',
 		components: {
 			HeaderItem,
+			ModeSwitch,
 			UserCard,
 			ChartItem,
 			FooterItem
@@ -24,6 +27,18 @@
 </script>
 
 <style>
+	:root {
+		--app-background-color: #363744;
+	}
+
+	[theme="dark"] {
+		--app-background-color: #7589d6;
+	}
+
+	.app-background {
+		background-color: var(--app-background-color);
+	}
+
 	#app {
 		font-family: 'Quicksand', sans-serif;
 		color: #2c3e50;
