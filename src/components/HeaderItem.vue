@@ -3,7 +3,7 @@
 		<template slot="brand">
 			<b-navbar-item>
 				<div class="logo">
-					stox
+					// stox
 				</div>
 			</b-navbar-item>
 		</template>
